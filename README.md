@@ -1,4 +1,5 @@
 #Rule
+
  -Solidaritas
  
  -Kerja keras
