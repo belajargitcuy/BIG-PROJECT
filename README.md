@@ -1,4 +1,4 @@
-# Rule
+
  - Solidaritas
  -Kerja keras
  -Berpengalaman Menyelam(penyelam handal)
