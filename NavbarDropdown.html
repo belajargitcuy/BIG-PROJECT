@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar dropdown</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #ddd;
+        }
+
+        /* nav */
+        nav{
+            width: 100%;
+            height: 70px;
+            background-color: rgb(39, 38, 38);
+            border-bottom: 3px solid palevioletred;
+            display: flex;
+            padding: 20px 25px 0 0;
+            box-sizing: border-box;
+            justify-content: space-around;
+        }
+        .logo h1 {
+            color: palevioletred;
+            font-family: cursive;
+        }
+        ul{
+            flex-basis: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;    
+        }
+        li{
+            flex-basis: 25%;
+            height: 40px;
+            list-style: none;
+            color: #e8e8e8;
+            font-family: open sans,sans-serif;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            /* border: 1px solid orange; */
+            text-align: center;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: .4s;
+            position: relative;
+        }
+        ul li:active  {
+            background-color: rgba(0,0,0,0.5);
+        }
+        ul li:hover .select{
+            opacity: 1;
+        }
+        li .select{
+            position: absolute;
+            bottom: 0;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid palevioletred;
+        }
+        .search{
+            flex-basis: 15%;
+            height: 35px;
+            /* border: 1px solid magenta; */
+        }
+        .search input{
+            width: 100%;
+            height: 35px;
+            color: white;
+            background-color:#828080;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .search input::placeholder{
+            color: #e8e8e8;
+        }
+        .search input:focus{
+            outline: none;
+        }
+
+        /* content */
+        main{
+            border: 1px solid forestgreen;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding: 30px 100px;
+        }
+        .notice{
+            /* flex-basis: 75%; */
+            width: 100%;
+            height: 30px;
+            /* border: 1px solid firebrick; */
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            font-family: open sans,sans-serif;
+        }
+        .notice h3{
+            flex-basis: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            height: 30px;
+            background-color: palevioletred;
+        }
+        .notice p{
+            flex-basis: 90%;
+            display: flex;
+            align-items: center;
+            height: 30px;
+            padding-left: 20px;
+            box-sizing: border-box;
+            font-size: 15px;
+            background-color: rgb(39, 38, 38);
+            color: white;
+        }
+        .content{
+            margin-top: 10px;
+            width: 100%;
+            /* height: 500px; */
+            display: flex;
+        }
+
+        section{
+            background-color: darkcyan  ;
+            flex-basis: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        section .galery{
+            width: 100%;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .galery .sub-galery{
+            width: 100%;
+            height: 50px;
+            background-color: rgb(39, 38, 38);
+            color: #e8e8e8;
+            font-size: 14px;
+            font-family: sans-serif;
+            display: flex;
+            padding: 10px;
+            box-sizing: border-box;
+            align-items: center;
+            /* border-top-left-radius: 12px;
+            border-top-right-radius: 12px; */
+        }
+        .galery .box-galery{
+            width: 100%;
+            height: 200px;
+            background-color: green;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* gap: 10px; */
+        }
+        .box-galery div{
+            width: 17%;
+            height: 170px;
+            background-color: darkgreen;
+        }
+        .new-beranda{
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .new-beranda .sub-beranda{
+            width: 100%;
+            height: 50px;
+            background-color: rgb(39, 38, 38);
+            color: #e8e8e8;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        article{
+            width: 100%;
+            /* height: 50px; */
+            display: flex;
+            /* padding: 10px 0; */
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            gap: 5px;
+        }
+        article .film-beranda{
+            width: 100%;
+            /* height: 100px; */
+            padding: 10px;
+            box-sizing: border-box;
+            /* background-color: rgb(7, 92, 7); */
+            background-color: rgb(17, 63, 17);
+            display: flex;
+            gap: 10px;
+        }
+        .film-beranda .thumbnail{
+            width: 180px;
+            height: 100px;
+            background-color: green;
+        }
+        
+        aside{
+            flex-basis: 30%;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">
+            <h1>NavSkuy</h1>
+        </div>
+        <ul>
+            <li>Home<div class="select"></div></li>
+            <li>Populer<div class="select"></div></li>
+            <li>Genre<div class="select"></div></li>
+            <li>Jadwal<div class="select"></div></li>
+            <li>List<div class="select"></div></li>
+            <li>Lapor Link Rusak<div class="select"></div></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Cari Judul/Genre disini...">
+        </div>
+    </nav>
+    <main>
+        <div class="notice">
+            <h3>Notice</h3>
+            <p>Skuy kuy kuy kuy belom ada apdet</p>
+        </div>
+        <div class="content">
+            <section>
+                <div class="galery">
+                    <div class="sub-galery">
+                        <h1>Koleksi terbaru</h1>
+                    </div>
+                    <div class="box-galery">
+                        <div class="film-galery"></div>
+                        <div class="film-galery"></div>
+                        <div class="film-galery"></div>
+                        <div class="film-galery"></div>
+                        <div class="film-galery"></div>
+                    </div>
+                </div>
+                <div class="new-beranda">
+                    <div class="sub-beranda">
+                        <h2>Episode terbaru</h2>
+                    </div>
+                    <article>
+                        <div class="film-beranda">
+                            <div class="thumbnail"></div>
+                            <div class="sinopsis">
+                                <h3>Judulnya bos</h3>
+                                <p>sekilas ini sinopsisnya cuy okey yo sinopsis ini cuy</p>
+                            </div>
+                        </div>
+                        <div class="film-beranda">
+                            <div class="thumbnail"></div>
+                            <div class="sinopsis">
+                                <h3>Judulnya bos</h3>
+                                <p>sekilas ini sinopsisnya cuy okey yo sinopsis ini cuy</p>
+                            </div>
+                        </div>
+                        <div class="film-beranda">
+                            <div class="thumbnail"></div>
+                            <div class="sinopsis">
+                                <h3>Judulnya bos</h3>
+                                <p>sekilas ini sinopsisnya cuy okey yo sinopsis ini cuy</p>
+                            </div>
+                        </div>
+                        <div class="film-beranda">
+                            <div class="thumbnail"></div>
+                            <div class="sinopsis">
+                                <h3>Judulnya bos</h3>
+                                <p>sekilas ini sinopsisnya cuy okey yo sinopsis ini cuy</p>
+                            </div>
+                        </div>
+                        <div class="film-beranda">
+                            <div class="thumbnail"></div>
+                            <div class="sinopsis">
+                                <h3>Judulnya bos</h3>
+                                <p>sekilas ini sinopsisnya cuy okey yo sinopsis ini cuy</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <aside>
+                <ul>
+                    <li><a href="">Link1</a></li>
+                    <li><a href="">Link2</a></li>
+                    <li><a href="">Link3</a></li>
+                    <li><a href="">Link4</a></li>
+                    <li><a href="">Link5</a></li>
+                </ul>
+                <div class="list-populer">
+                    <div class="film-populer"></div>
+                    <div class="film-populer"></div>
+                    <div class="film-populer"></div>
+                    <div class="film-populer"></div>
+                    <div class="film-populer"></div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+</body>
+</html>
