@@ -1,3 +1,5 @@
+Intinya Biar Semangat Ngoding :D
+
 #Rule
 
  -Solidaritas
