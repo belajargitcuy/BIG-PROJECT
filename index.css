@@ -139,7 +139,7 @@ section{
 }
 section .galery{
     width: 100%;
-    height: 250px;
+    height: 270px;
     display: flex;
     flex-direction: column;
     border-radius: 12px;
@@ -161,7 +161,7 @@ section .galery{
 }
 .galery .box-galery{
     width: 100%;
-    height: 200px;
+    height: 250px;
     background-color: green;
     display: flex;
     justify-content: space-evenly;
@@ -170,8 +170,33 @@ section .galery{
 }
 .box-galery div{
     width: 17%;
-    height: 170px;
+    /* height: 160px; */
+    /* border-top-left-radius: 5px; */
+    /* border-top-right-radius: 5px; */
+    /* background-color: rgb(46, 43, 43); */
+}
+.film-galery .film{
+    width: 100%;
+    height: 160px;
     background-color: darkgreen;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.film-galery .film-judul{
+    width: 100%;
+    height: 40px;
+    color: #ddd;
+    font-family: sans-serif;
+    background-color: rgb(39, 38, 38);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 5px;
 }
 .new-beranda{
     width: 100%;
